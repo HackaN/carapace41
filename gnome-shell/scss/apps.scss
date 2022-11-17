@@ -9,19 +9,20 @@
 .app-folder-dialog .icon-grid,
 .app-folder-dialog .icon-grid .overview-icon {
   //icon-size: 5em;
+  //icon-size: 120px;
   //spacing: 5px !important; // lägre värde = större ikoner. Denna gör ikoner i mappar små
   //-shell-grid-horizontal-item-size: 8em !important; //122px
   //-shell-grid-vertical-item-size: 8em !important; //122px
   //border: 1px solid green;
 //  font-size: .9em;
 }
- /*.icon-grid .overview-icon,
+ .icon-grid .overview-icon,
  .app-folder-dialog .icon-grid {
-   icon-size: 96px;
-   spacing: 0px !important; // lägre värde = större ikoner
-   -shell-grid-horizontal-item-size: 122px;
-   -shell-grid-vertical-item-size: 122px;
- }*/
+   //icon-size: 96px;
+   //spacing: 0px !important; // lägre värde = större ikoner
+   //-shell-grid-horizontal-item-size: 122px;
+   //-shell-grid-vertical-item-size: 122px;
+ }
  .app-display {
    //margin-left: 2em; // så att ikoner blir centerade
    // margin-bottom: 2em !important; // går ej att hindra storleksändring
@@ -50,6 +51,7 @@
    text-shadow: $textIconMediumShadow;
    font-size: .9em;
    font-weight: 400;
+   icon-size: 120px;
    //icon-shadow: $textIconMediumShadow;
    icon-shadow: $iconShadowCarapaceHalf;
    //margin: 0;

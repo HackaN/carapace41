@@ -13,6 +13,9 @@
   @extend %dashSVG3_scalable;
   //@extend %dashPureCode;
 }
+#dash StBoxLayout {
+  border: none solid 0;
+}
 
 /*
 #dash StWidget .overview-icon {
@@ -47,6 +50,11 @@
   background-image: none;
 }*/
 
+#dashtodockBox,
+#dashtodockDashContainer {
+  padding-bottom: 0px !important;
+}
+
 #dash StWidget.dash-separator {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
@@ -60,6 +68,9 @@
   border-radius: 0px;
   background-color: transparent !important;
   border-width: .5px;
+}
+#dash .app-well-app StWidget.overview-icon {
+  @extend %flashLightOff;
 }
 #dash .app-well-app {
   //@extend %flashLightOff;
@@ -77,7 +88,8 @@
   //icon-shadow: $iconShadowCarapaceStraightHalf;
 
   //icon-shadow: $iconShadowCarapaceClose;
-  icon-shadow: $iconShadowCarapaceFar;
+  //icon-shadow: $iconShadowCarapaceFar;
+  icon-shadow: $iconShadowCarapaceMidway;
 
   //@extend %flashlightLupeGlass;
   //icon-shadow: 0 -3px 0 5px rgba(0,0,0,1) !important;
@@ -140,8 +152,9 @@
   background-gradient-direction: radial;*/
   //@extend %gradientFullShadow;
 }
-#dash .focused StWidget {
+#dash .focused StWidget.overview-icon {
   //box-shadow: inset 0 .9em 0 0 $textIconColorBrightMedium;
+  @extend %flashLightSelected;
 }
 /*#dash .focused.app-well-app > * StIcon {
   icon-shadow: $textIconDefaultShadowBig;
