@@ -17,11 +17,18 @@
 //  font-size: .9em;
 }
  .icon-grid .overview-icon,
+ .icon-grid .overview-icon-with-label,
  .app-folder-dialog .icon-grid {
    //icon-size: 96px;
-   //spacing: 0px !important; // lägre värde = större ikoner
+   spacing: 0px !important; // lägre värde = större ikoner
    //-shell-grid-horizontal-item-size: 122px;
    //-shell-grid-vertical-item-size: 122px;
+   //border: 1px solid yellow !important;
+   padding: 0 0 0 0 !important;
+ }
+ .icon-grid .app-well-app {
+   margin: 0 0 0 0 !important;
+   spacing: 0 0 0 0 !important;
  }
  .app-display {
    //margin-left: 2em; // så att ikoner blir centerade
@@ -63,6 +70,10 @@
    @extend %floatingPlateTransparent;
    border-radius: 5px;
    //margin-top: -5;
+   margin-bottom: 5px;
+ }
+ .icon-grid .app-well-app.app-folder .overview-icon StLabel {
+   margin-bottom: 0px;
  }
  .icon-grid .app-well-app:hover .overview-icon StLabel,
  .icon-grid .app-well-app:selected .overview-icon StLabel,
@@ -139,7 +150,7 @@
    width: 30px;
    height: 3px;
    margin-bottom: 0px; // kan ej vara negativ, försvinner då
-   margin-top: 2px;
+   margin-top: 0px;
    border-radius: 3px;
    @extend %sunkinglass;
  }
@@ -185,7 +196,7 @@
    @extend %sunkinglassDimmed;
    //background-color: rgba(0,0,0,.2);
    border-radius: 5px;
-   //padding: 4px;
+   padding: 4px 0 0 0;
  }
  .app-folder-icon {} // kan köra med denna istället för den ovan
  .icon-grid .app-well-app.app-folder:hover > .overview-icon StBoxLayout {

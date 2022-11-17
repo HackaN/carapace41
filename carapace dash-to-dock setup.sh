@@ -27,7 +27,7 @@ done
 echo "
 	--------------------------------| Tweaking |--------------------------------
 	"
-gsettings set org.gnome.shell.extensions.user-theme name 'carapace40'
+gsettings set org.gnome.shell.extensions.user-theme name 'carapace41'
 echo "	→ Setting user theme to Carapace"
 gsettings set org.gnome.shell.extensions.dash-to-dock apply-custom-theme false
 echo "	→ Deactivate built in theme"

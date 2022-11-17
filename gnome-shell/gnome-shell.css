@@ -1398,6 +1398,16 @@ Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
 .window-close:active {
   background-image: url("common-assets/misc/close-active.svg"); }
 
+.icon-grid .overview-icon,
+.icon-grid .overview-icon-with-label,
+.app-folder-dialog .icon-grid {
+  spacing: 0px !important;
+  padding: 0 0 0 0 !important; }
+
+.icon-grid .app-well-app {
+  margin: 0 0 0 0 !important;
+  spacing: 0 0 0 0 !important; }
+
 .icon-grid .app-well-app .overview-icon StLabel,
 .icon-grid .app-well-app .overview-icon StIcon,
 .search-section .app-well-app .overview-icon StLabel,
@@ -1413,7 +1423,11 @@ Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
 
 .icon-grid .app-well-app .overview-icon StLabel,
 .search-section .app-well-app .overview-icon StLabel {
-  border-radius: 5px; }
+  border-radius: 5px;
+  margin-bottom: 5px; }
+
+.icon-grid .app-well-app.app-folder .overview-icon StLabel {
+  margin-bottom: 0px; }
 
 .search-section .app-well-app:hover .overview-icon StLabel,
 .search-section .app-well-app:selected .overview-icon StLabel,
@@ -1443,7 +1457,7 @@ Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
   width: 30px;
   height: 3px;
   margin-bottom: 0px;
-  margin-top: 2px;
+  margin-top: 0px;
   border-radius: 3px; }
 
 .icon-grid .app-well-app:hover .app-well-app-running-dot,
@@ -1470,7 +1484,8 @@ Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
   box-shadow: none; }
 
 .icon-grid .app-well-app.app-folder > .overview-icon StBoxLayout {
-  border-radius: 5px; }
+  border-radius: 5px;
+  padding: 4px 0 0 0; }
 
 .icon-grid .app-well-app.app-folder:hover > .overview-icon StBoxLayout {
   border-radius: 6px;
