@@ -89,24 +89,30 @@
 
   //icon-shadow: $iconShadowCarapaceClose;
   //icon-shadow: $iconShadowCarapaceFar;
+
   icon-shadow: $iconShadowCarapaceMidway;
 
   //@extend %flashlightLupeGlass;
   //icon-shadow: 0 -3px 0 5px rgba(0,0,0,1) !important;
   //background-color: rgba(100,200,255,.1);
   @extend %gradientVagueShadow;
+  //@extend %flashlightLupeGlass;
+  //@extend %gradientVagueShine;
   //av någon anledning så behöver dom en definerad (synlig, minst .1) bakgrund plus stjärnan för att skuggan ska ritas... :-/
   border-radius: 92px; // bara ifall någon galning kör as-stora ikoner
 }
 #dash .focused.app-well-app .overview-icon > * StIcon,
 #dash .focused.app-well-app .overview-icon.fallback-app-icon > * StIcon {
-  //@extend %gradientHalfShadow;
-  @extend %gradientFullShadow;
+  @extend %gradientHalfShadow;
+  //@extend %gradientFullShadow;
   //@extend %gradientVagueShine;
+  //@extend %flashlightLupeGlass;
+  //@extend %flashlightLupeGlassSharp;
   border-radius: 92px; // bara ifall någon galning kör as-stora ikoner
 
   //icon-shadow: $iconShadowCarapaceStraightHalf;
   icon-shadow: $iconShadowCarapaceClose;
+  //icon-shadow: @extend %flashlightLupeGlass;
 }
 /*#dash .dash-item-container {
   @extend %gradientVagueShadow;
@@ -186,7 +192,9 @@
 #dash .focused.running1:hover .app-well-app-running-dot {
   background: $runningDotFocused;
 }
-
+#dash .running1.app-well-app .overview-icon > * StIcon {
+  //@extend %flashlightLupeGlass;// vi kan leka med effekter här
+}
 
 #dash .running2 .app-well-app-running-dot {
   width: .38em*2;

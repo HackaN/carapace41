@@ -15,12 +15,7 @@
   //box-shadow:inset 0px .5px .5px rgba(245,5,0,.25);
   //border-radius: 3px 3px 0 0;
 }
-// Gnome-extension "transparent Top Bar"
-// We got a .35 background out of the box
-#panel.transparent-top-bar--transparent {
-    background-color: rgba(0, 0, 0, 0.0) !important;
-    transition-duration: 500ms;
-  }
+
 
 // tweak end
 #panel,
@@ -29,6 +24,7 @@
     font-size: 1em !important;
     icon-size: 1em;
     transition-duration: 0ms !important;
+    border: 1px solid transparent; // så panelen inte hoppar. har kant på solid
 }
 #panel.transparent {
     //background-color: rgba(0,250,0,1) !important;
@@ -89,6 +85,12 @@ background-image: url("common-assets/panel/GnomeFootVit_48px_.9_ny skugga.svg");
 //filter: blur(10px);
 //filter:opacity(30%);
 }
+#panel.transparent-top-bar--solid #panelActivities.panel-button > * {
+  background-image: url("common-assets/panel/GnomeFootVit_48px_.7_ny skugga.svg");
+}
+#panel.transparent-top-bar--solid :hover #panelActivities.panel-button > * {
+  background-image: url("common-assets/panel/GnomeFootVit_48px_.9_ny skugga.svg");
+}
 #panel:overview #panelActivities.panel-button > * {
   // .7 alpha
 background-image: url("common-assets/panel/GnomeFootVit_48px_.7_ny skugga.svg");
@@ -113,11 +115,66 @@ background-image: url("common-assets/panel/GnomeFootVit_48px_.9_ny skugga.svg");
 // lägg till :hover effekter på foten
 
 #panel,
+#panel .power-status.panel-status-indicators-box,
 #panel .panel-button,
 #panel .system-status-icon,
+#panel .app-menu-icon,
 #panel .app-menu-icon > StIcon,
 #panel .popup-menu-arrow,
 #panel Gjs_ui_dateMenu_MessagesIndicator,
+#panel.transparent-top-bar--solid,
+#panel.transparent-top-bar--solid .power-status.panel-status-indicators-box,
+#panel.transparent-top-bar--solid .panel-button,
+#panel.transparent-top-bar--solid .system-status-icon,
+#panel.transparent-top-bar--solid .app-menu-icon,
+#panel.transparent-top-bar--solid .app-menu-icon > StIcon,
+#panel.transparent-top-bar--solid .popup-menu-arrow,
+#panel.transparent-top-bar--solid Gjs_ui_dateMenu_MessagesIndicator {
+  font-size: 1em;
+  icon-size: 1em !important;
+  font-weight: $fontWeight;
+  //color: darken($textIconColorBrightSolid, 15%);
+  //color: $textIconColorBrightStrong;
+  color: rgba(255,255,255,.7);
+  text-shadow: $textIconPanelShadow;
+  icon-shadow: $textIconPanelShadow !important;
+  //text-shadow: $textIconDefaultShadow;
+  //icon-shadow: $textIconDefaultShadow !important;
+  //text-shadow: $textIconDefaultShine;
+  //icon-shadow: $textIconDefaultShine;
+}
+#panel :hover,
+#panel :hover .power-status.panel-status-indicators-box,
+#panel :hover .panel-button,
+#panel :hover .system-status-icon,
+#panel :hover .app-menu-icon,
+#panel :hover .app-menu-icon > StIcon,
+#panel :hover .popup-menu-arrow,
+#panel :hover Gjs_ui_dateMenu_MessagesIndicator,
+#panel.transparent-top-bar--solid :hover,
+#panel.transparent-top-bar--solid :hover .power-status.panel-status-indicators-box,
+#panel.transparent-top-bar--solid :hover .panel-button,
+#panel.transparent-top-bar--solid :hover .system-status-icon,
+#panel.transparent-top-bar--solid :hover .app-menu-icon,
+#panel.transparent-top-bar--solid :hover .app-menu-icon > StIcon,
+#panel.transparent-top-bar--solid :hover .popup-menu-arrow,
+#panel.transparent-top-bar--solid :hover Gjs_ui_dateMenu_MessagesIndicator {
+  color: rgba(255,255,255,.9);
+}
+
+#panel.transparent-top-bar--transparent,
+#panel.transparent-top-bar--transparent .power-status.panel-status-indicators-box,
+#panel.transparent-top-bar--transparent .panel-button,
+#panel.transparent-top-bar--transparent .system-status-icon,
+#panel.transparent-top-bar--transparent .app-menu-icon,
+#panel.transparent-top-bar--transparent .app-menu-icon > StIcon,
+#panel.transparent-top-bar--transparent .popup-menu-arrow,
+#panel.transparent-top-bar--transparent Gjs_ui_dateMenu_MessagesIndicator {
+  color: $textIconColorBrightStrong;
+  text-shadow: $textIconDefaultShadow;
+  icon-shadow: $textIconDefaultShadow !important;
+}
+
 #panel:overview,
 #panel:overview .panel-button,
 #panel:overview .system-status-icon,
@@ -128,11 +185,18 @@ background-image: url("common-assets/panel/GnomeFootVit_48px_.9_ny skugga.svg");
   icon-size: 1em !important;
   font-weight: $fontWeight;
   //color: darken($textIconColorBrightSolid, 15%);
-  color: $textIconColorBrightStrong;
-  text-shadow: $textIconDefaultShadow !important;
-  icon-shadow: $textIconDefaultShadow !important;
+  //color: $textIconColorBrightStrong;
+  color: lighten($veryDark, 20%);
+  text-shadow: $textIconPanelShadow;
+  icon-shadow: $textIconPanelShadow !important;
+  //text-shadow: $textIconDefaultShadow;
+  //icon-shadow: $textIconDefaultShadow !important;
   //text-shadow: $textIconDefaultShine;
   //icon-shadow: $textIconDefaultShine;
+}
+
+#panel StIcon.system-status-icon > * {
+  color: red !important;
 }
 
 // Tangentbordslayout, texten är by default så liten och nedsänkt...
@@ -150,7 +214,7 @@ background-image: url("common-assets/panel/GnomeFootVit_48px_.9_ny skugga.svg");
 #panel .power-status.panel-status-indicators-box {
     spacing: 0;
     font-size: 1.1em;
-    color: $textIconColorBrightMedium;
+    //color: $textIconColorBrightMedium;
 }
 #panel .power-status.panel-status-indicators-box StIcon,
 #panel.transparent .power-status.panel-status-indicators-box StIcon,
@@ -162,20 +226,43 @@ background-image: url("common-assets/panel/GnomeFootVit_48px_.9_ny skugga.svg");
 }*/
 
 #panel {
-  background-color: $blackBezel;
+  //background-color: $blackBezel;
+  //background-color: $backgroundAdwaitaDark;
+  background-color: $veryDark;
   //border-top: 1px solid transparent; // så att panel items inte hoppar runt mellan desktop och overview
   border-left: 0px solid $overViewFrame;
-  border-bottom: 0px solid $overViewFrame;
   border-right: 0px solid $overViewFrame;
+  border-bottom: 0px solid $overViewFrame;
   transition-duration: 0ms !important; // det bidrar bara till blinking när tillägget skiftar paneler:overview
+}
+// transparent top bar ftpix // HACK:
+// Gnome-extension "transparent Top Bar"
+// We got a .35 background out of the box
+#panel.transparent-top-bar--transparent {
+    background-color: rgba(0, 0, 0, 0.0) !important;
+    transition-duration: 500ms;
+    border: 1px solid transparent; // så panelen inte hoppar. har kant på solid
+  }
+#panel.transparent-top-bar--solid {
+  border: 1px solid $blackBezel;
+}
+#panel.transparent-top-bar--solid {
+  color: red !important;
+}
+#panel.transparent-top-bar--solid .panel-corner {
+  -panel-corner-radius: 10px;
+  -panel-corner-background-color: $veryDark;
+  -panel-corner-border-width: 1px;
+  -panel-corner-border-color: $blackBezel;
+  -panel-corner-opacity: 1 !important;
 }
 #panel .panel-corner {
   //-panel-corner-radius: 5px;
   -panel-corner-radius: 10px;
-  -panel-corner-background-color: $blackBezel;
-  -panel-corner-border-width: 0px;
-  -panel-corner-border-color: $overViewFrame;
-  transition-duration: 0ms !important;
+  -panel-corner-background-color: $veryDark;
+  -panel-corner-border-width: 1px;
+  -panel-corner-border-color: $blackBezel;
+  -panel-corner-opacity: 1 !important;
 }
 #panel.transparent {
   transition-duration: 0ms !important;

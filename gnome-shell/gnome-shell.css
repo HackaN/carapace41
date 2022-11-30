@@ -106,16 +106,40 @@ Theme by HackaN ( hackan301@gmail.com )
   background-gradient-end: rgba(235, 235, 235, 0);
   background-gradient-direction: radial; }
 
-Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
+.icon-grid .app-well-app:hover .overview-icon StIcon,
+.icon-grid .app-well-app:selected .overview-icon StIcon,
+.icon-grid .app-well-app:focus .overview-icon StIcon,
+.search-section .app-well-app:hover .overview-icon StIcon,
+.search-section .app-well-app:selected .overview-icon StIcon,
+.search-section .app-well-app:focus .overview-icon StIcon, Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
   background-gradient-start: rgba(255, 255, 255, 0.7);
   background-gradient-end: rgba(235, 235, 235, 0.1);
   background-gradient-direction: radial;
   border: 0.5px solid rgba(255, 255, 255, 0.2); }
 
-#dash .app-well-app StWidget.overview-icon, .switcher-list .item-box {
+StButton.page-navigation-arrow :hover > StIcon {
+  background-gradient-start: rgba(255, 255, 255, 0.4);
+  background-gradient-end: rgba(235, 235, 235, 0.2);
+  background-gradient-direction: radial;
+  border: 0.5px solid rgba(255, 255, 255, 0.3); }
+
+.icon-grid .app-well-app:hover .overview-icon StLabel,
+.icon-grid .app-well-app:selected .overview-icon StLabel,
+.icon-grid .app-well-app:focus .overview-icon StLabel,
+.search-section .app-well-app:hover .overview-icon StLabel,
+.search-section .app-well-app:selected .overview-icon StLabel,
+.search-section .app-well-app:focus .overview-icon StLabel {
+  background-gradient-start: rgba(235, 235, 235, 0.1);
+  background-gradient-end: rgba(250, 250, 250, 0.15);
+  background-gradient-direction: vertical;
+  border: 0.5px solid rgba(255, 255, 255, 0.2); }
+
+.icon-grid .app-well-app.app-folder:hover .overview-icon StLabel,
+.icon-grid .app-well-app.app-folder:selected .overview-icon StLabel,
+.icon-grid .app-well-app.app-folder:focus .overview-icon StLabel, #dash .app-well-app StWidget.overview-icon, .switcher-list .item-box {
   background-gradient-start: rgba(255, 255, 255, 0);
   background-gradient-end: rgba(255, 255, 255, 0);
-  background-gradient-direction: radial;
+  background-gradient-direction: none;
   border: 0.5px solid rgba(255, 255, 255, 0); }
 
 .calendar .calendar-day-base {
@@ -162,9 +186,14 @@ Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
   background-gradient-end: rgba(75, 75, 75, 0);
   background-gradient-direction: radial; }
 
-#dash .show-apps, #dash .focused.app-well-app .overview-icon > * StIcon,
-#dash .focused.app-well-app .overview-icon.fallback-app-icon > * StIcon {
+#dash .show-apps {
   background-gradient-start: rgba(0, 0, 0, 0.5);
+  background-gradient-end: rgba(75, 75, 75, 0);
+  background-gradient-direction: radial; }
+
+#dash .focused.app-well-app .overview-icon > * StIcon,
+#dash .focused.app-well-app .overview-icon.fallback-app-icon > * StIcon {
+  background-gradient-start: rgba(0, 0, 0, 0.25);
   background-gradient-end: rgba(75, 75, 75, 0);
   background-gradient-direction: radial; }
 
@@ -312,12 +341,7 @@ StEntry,
 .search-provider-icon:focus .list-search-provider-content, .list-search-result:hover,
 .list-search-result:focus,
 .list-search-result:focus:hover,
-.list-search-result:selected, .icon-grid .app-well-app:hover .overview-icon StLabel,
-.icon-grid .app-well-app:selected .overview-icon StLabel,
-.icon-grid .app-well-app:focus .overview-icon StLabel,
-.search-section .app-well-app:hover .overview-icon StLabel,
-.search-section .app-well-app:selected .overview-icon StLabel,
-.search-section .app-well-app:focus .overview-icon StLabel {
+.list-search-result:selected {
   background-color: #4e4e4e;
   border: 0.5px solid rgba(41, 41, 41, 0.95);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
@@ -329,16 +353,6 @@ StEntry,
   background-color: rgba(0, 0, 0, 0);
   border: 0.5px solid rgba(0, 0, 0, 0);
   box-shadow: none; }
-
-.icon-grid .app-well-app:hover .overview-icon StIcon,
-.icon-grid .app-well-app:selected .overview-icon StIcon,
-.icon-grid .app-well-app:focus .overview-icon StIcon,
-.search-section .app-well-app:hover .overview-icon StIcon,
-.search-section .app-well-app:selected .overview-icon StIcon,
-.search-section .app-well-app:focus .overview-icon StIcon {
-  background-color: #414141;
-  border: 0.5px solid rgba(0, 0, 0, 0.4);
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.8); }
 
 .app-well-app.app-folder {
   background-color: rgba(67, 67, 67, 0.85);
@@ -580,16 +594,13 @@ StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
   border-radius: 2px;*/
   box-shadow: inset 0px 0.5px 0.5px rgba(245, 245, 250, 0.25); }
 
-#panel.transparent-top-bar--transparent {
-  background-color: rgba(0, 0, 0, 0) !important;
-  transition-duration: 500ms; }
-
 #panel,
 #panel.trasparent,
 #panel:overview {
   font-size: 1em !important;
   icon-size: 1em;
-  transition-duration: 0ms !important; }
+  transition-duration: 0ms !important;
+  border: 1px solid transparent; }
 
 #panel.transparent {
   transition-duration: 0ms !important; }
@@ -633,6 +644,12 @@ background-image: url("common-assets/misc/close.svg");
 #panel.transparent #panelActivities.panel-button > * {
   background-image: url("common-assets/panel/GnomeFootVit_48px_.9_ny skugga.svg"); }
 
+#panel.transparent-top-bar--solid #panelActivities.panel-button > * {
+  background-image: url("common-assets/panel/GnomeFootVit_48px_.7_ny skugga.svg"); }
+
+#panel.transparent-top-bar--solid :hover #panelActivities.panel-button > * {
+  background-image: url("common-assets/panel/GnomeFootVit_48px_.9_ny skugga.svg"); }
+
 #panel:overview #panelActivities.panel-button > * {
   background-image: url("common-assets/panel/GnomeFootVit_48px_.7_ny skugga.svg"); }
 
@@ -649,11 +666,58 @@ background-image: url("common-assets/misc/close.svg");
   width: 0; }
 
 #panel,
+#panel .power-status.panel-status-indicators-box,
 #panel .panel-button,
 #panel .system-status-icon,
+#panel .app-menu-icon,
 #panel .app-menu-icon > StIcon,
 #panel .popup-menu-arrow,
 #panel Gjs_ui_dateMenu_MessagesIndicator,
+#panel.transparent-top-bar--solid,
+#panel.transparent-top-bar--solid .power-status.panel-status-indicators-box,
+#panel.transparent-top-bar--solid .panel-button,
+#panel.transparent-top-bar--solid .system-status-icon,
+#panel.transparent-top-bar--solid .app-menu-icon,
+#panel.transparent-top-bar--solid .app-menu-icon > StIcon,
+#panel.transparent-top-bar--solid .popup-menu-arrow,
+#panel.transparent-top-bar--solid Gjs_ui_dateMenu_MessagesIndicator {
+  font-size: 1em;
+  icon-size: 1em !important;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  text-shadow: 0 1px 1px 0.5px black;
+  icon-shadow: 0 1px 1px 0.5px black !important; }
+
+#panel :hover,
+#panel :hover .power-status.panel-status-indicators-box,
+#panel :hover .panel-button,
+#panel :hover .system-status-icon,
+#panel :hover .app-menu-icon,
+#panel :hover .app-menu-icon > StIcon,
+#panel :hover .popup-menu-arrow,
+#panel :hover Gjs_ui_dateMenu_MessagesIndicator,
+#panel.transparent-top-bar--solid :hover,
+#panel.transparent-top-bar--solid :hover .power-status.panel-status-indicators-box,
+#panel.transparent-top-bar--solid :hover .panel-button,
+#panel.transparent-top-bar--solid :hover .system-status-icon,
+#panel.transparent-top-bar--solid :hover .app-menu-icon,
+#panel.transparent-top-bar--solid :hover .app-menu-icon > StIcon,
+#panel.transparent-top-bar--solid :hover .popup-menu-arrow,
+#panel.transparent-top-bar--solid :hover Gjs_ui_dateMenu_MessagesIndicator {
+  color: rgba(255, 255, 255, 0.9); }
+
+#panel.transparent-top-bar--transparent,
+#panel.transparent-top-bar--transparent .power-status.panel-status-indicators-box,
+#panel.transparent-top-bar--transparent .panel-button,
+#panel.transparent-top-bar--transparent .system-status-icon,
+#panel.transparent-top-bar--transparent .app-menu-icon,
+#panel.transparent-top-bar--transparent .app-menu-icon > StIcon,
+#panel.transparent-top-bar--transparent .popup-menu-arrow,
+#panel.transparent-top-bar--transparent Gjs_ui_dateMenu_MessagesIndicator {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2.5px 1px rgba(0, 0, 0, 0.8);
+  icon-shadow: 0 1px 2.5px 1px rgba(0, 0, 0, 0.8) !important; }
+
 #panel:overview,
 #panel:overview .panel-button,
 #panel:overview .system-status-icon,
@@ -663,9 +727,12 @@ background-image: url("common-assets/misc/close.svg");
   font-size: 1em;
   icon-size: 1em !important;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 0 1px 2.5px 1px rgba(0, 0, 0, 0.8) !important;
-  icon-shadow: 0 1px 2.5px 1px rgba(0, 0, 0, 0.8) !important; }
+  color: #4c4c4c;
+  text-shadow: 0 1px 1px 0.5px black;
+  icon-shadow: 0 1px 1px 0.5px black !important; }
+
+#panel StIcon.system-status-icon > * {
+  color: red !important; }
 
 #panel Gjs_status_keyboard_InputSourceIndicator StLabel {
   /*vertical-align: text-top !important;
@@ -676,8 +743,7 @@ background-image: url("common-assets/misc/close.svg");
 
 #panel .power-status.panel-status-indicators-box {
   spacing: 0;
-  font-size: 1.1em;
-  color: rgba(255, 255, 255, 0.7); }
+  font-size: 1.1em; }
 
 #panel .power-status.panel-status-indicators-box StIcon,
 #panel.transparent .power-status.panel-status-indicators-box StIcon,
@@ -688,18 +754,36 @@ background-image: url("common-assets/misc/close.svg");
      icon-size: .5em !important;
 }*/
 #panel {
-  background-color: black;
+  background-color: #191919;
   border-left: 0px solid #191e23;
-  border-bottom: 0px solid #191e23;
   border-right: 0px solid #191e23;
+  border-bottom: 0px solid #191e23;
   transition-duration: 0ms !important; }
+
+#panel.transparent-top-bar--transparent {
+  background-color: rgba(0, 0, 0, 0) !important;
+  transition-duration: 500ms;
+  border: 1px solid transparent; }
+
+#panel.transparent-top-bar--solid {
+  border: 1px solid black; }
+
+#panel.transparent-top-bar--solid {
+  color: red !important; }
+
+#panel.transparent-top-bar--solid .panel-corner {
+  -panel-corner-radius: 10px;
+  -panel-corner-background-color: #191919;
+  -panel-corner-border-width: 1px;
+  -panel-corner-border-color: black;
+  -panel-corner-opacity: 1 !important; }
 
 #panel .panel-corner {
   -panel-corner-radius: 10px;
-  -panel-corner-background-color: black;
-  -panel-corner-border-width: 0px;
-  -panel-corner-border-color: #191e23;
-  transition-duration: 0ms !important; }
+  -panel-corner-background-color: #191919;
+  -panel-corner-border-width: 1px;
+  -panel-corner-border-color: black;
+  -panel-corner-opacity: 1 !important; }
 
 #panel.transparent {
   transition-duration: 0ms !important; }
@@ -1363,8 +1447,7 @@ PopupMenu.PopupMenuSection {
   border-radius: 2px;
   box-shadow: $boxShadow2;
   background-color: rgba(140,145,150,.1);*/
-  border-radius: 6px 6px 3px 3px;
-  border: 2px red solid !important; }
+  border-radius: 6px 6px 3px 3px; }
 
 Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
   border-radius: 50px;
@@ -1598,6 +1681,12 @@ StButton.page-indicator StWidget.page-indicator-icon {
   height: 3px;
   margin-top: 0;
   margin-bottom: 0; }
+
+StButton.page-navigation-arrow > StIcon {
+  color: rgba(255, 255, 255, 0.5); }
+
+StButton.page-navigation-arrow :hover > StIcon {
+  color: rgba(38, 38, 38, 0.75); }
 
 /*
 

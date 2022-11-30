@@ -81,9 +81,18 @@
  .search-section .app-well-app:hover .overview-icon StLabel,
  .search-section .app-well-app:selected .overview-icon StLabel,
  .search-section .app-well-app:focus .overview-icon StLabel {
-   @extend %floatingDarkPlateHover;
+   //@extend %floatingDarkPlateHover;
+   @extend %flashlightLupeGlassVertical;
    //padding: 0 3px 0 3px;
  }
+ // fix för mappar, StLabel blir helt cp av inställningarna från ovan
+ .icon-grid .app-well-app.app-folder:hover .overview-icon StLabel,
+ .icon-grid .app-well-app.app-folder:selected .overview-icon StLabel,
+ .icon-grid .app-well-app.app-folder:focus .overview-icon StLabel {
+   @extend %flashLightOff;
+ }
+
+
  .search-section .app-well-app:hover .overview-icon StLabel,
  .search-section .app-well-app:selected .overview-icon StLabel,
  .search-section .app-well-app:focus .overview-icon StLabel {
@@ -107,7 +116,8 @@
    //@extend %flashLightHover;
    //@extend %flashLightComic;
    //@extend %floatingDarkPlateHover;
-   @extend %floatingPlateDiscreteLayer;
+   //@extend %floatingPlateDiscreteLayer;
+   @extend %flashlightLupeGlass;
  }
 
 
@@ -408,4 +418,17 @@ StButton.page-indicator StWidget.page-indicator-icon {
 }
 StButton.page-indicator:hover StWidget.page-indicator-icon {
   //
+}
+StButton.page-navigation-arrow > StIcon {
+  color: $textIconColorBrightWeak;
+  //@extend %flashLightOff;
+  //@extend %floatingPlateTransparent;
+}
+StButton.page-navigation-arrow :hover > StIcon {
+  //color: $textIconColorBrightStrong;
+  color: $adwaitaDark1;
+  //@extend %flashLightGhost;
+  //@extend %floatingDarkPlateHover;
+  //@extend %floatingPlateDiscreteLayer;
+  @extend %flashlightLupeGlassEven;
 }
