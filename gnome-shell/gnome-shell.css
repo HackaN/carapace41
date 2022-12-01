@@ -101,7 +101,8 @@ Theme by HackaN ( hackan301@gmail.com )
   text-shadow: 0 0.5px 0 0 rgba(250, 250, 250, 0.35) !important;
   font-weight: 700; }
 
-#dash .focused StWidget.overview-icon, .switcher-list .item-box:selected {
+#dash .focused StWidget.overview-icon,
+#dash .app-well-app.focused .overview-icon, .switcher-list .item-box:selected {
   background-gradient-start: rgba(255, 255, 255, 0.8);
   background-gradient-end: rgba(235, 235, 235, 0);
   background-gradient-direction: radial; }
@@ -111,11 +112,17 @@ Theme by HackaN ( hackan301@gmail.com )
 .icon-grid .app-well-app:focus .overview-icon StIcon,
 .search-section .app-well-app:hover .overview-icon StIcon,
 .search-section .app-well-app:selected .overview-icon StIcon,
-.search-section .app-well-app:focus .overview-icon StIcon, Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
+.search-section .app-well-app:focus .overview-icon StIcon {
   background-gradient-start: rgba(255, 255, 255, 0.7);
   background-gradient-end: rgba(235, 235, 235, 0.1);
   background-gradient-direction: radial;
   border: 0.5px solid rgba(255, 255, 255, 0.2); }
+
+Gjs_ui_windowPreview_WindowPreview StIcon.icon-dropshadow {
+  background-gradient-start: white;
+  background-gradient-end: rgba(190, 190, 190, 0.4);
+  background-gradient-direction: radial;
+  border: 0.5px solid rgba(180, 180, 180, 0.6); }
 
 StButton.page-navigation-arrow :hover > StIcon {
   background-gradient-start: rgba(255, 255, 255, 0.4);

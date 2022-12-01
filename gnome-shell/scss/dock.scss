@@ -158,9 +158,13 @@
   background-gradient-direction: radial;*/
   //@extend %gradientFullShadow;
 }
-#dash .focused StWidget.overview-icon {
+#dash .focused StWidget.overview-icon,
+#dash .app-well-app.focused .overview-icon {
   //box-shadow: inset 0 .9em 0 0 $textIconColorBrightMedium;
-  @extend %flashLightSelected;
+  @extend %flashLightSelected; // var ett helvete att få denna att lira, hade en ful ifylld ruta kring fokuserad programikon
+  //border: 1px solid red;
+  //background: none;
+  //border-radius: 92px;
 }
 /*#dash .focused.app-well-app > * StIcon {
   icon-shadow: $textIconDefaultShadowBig;

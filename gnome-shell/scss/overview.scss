@@ -159,7 +159,8 @@ Gjs_ui_windowPreview_WindowPreview {
 
   & StIcon.icon-dropshadow {
     //@extend %floatingPlateDiscreteLayer;
-    @extend %flashlightLupeGlass;
+    @extend %flashlightLupeGlassAccent;
+    //@extend %headerbarshield;
     //@extend %flashlightLupeGlassSharp;
     //@extend %flashlightLupeGlassMild;
     //@extend %flashLightSelected;

@@ -285,6 +285,18 @@ $overViewSunkBackground: darken($overviewBackground, 3%);
   background-gradient-direction: radial;
   border: .5px solid rgba(255,255,255,.2);
 }
+%flashlightLupeGlassAccent {
+  background-gradient-start: rgba(255,255,255,1);
+  background-gradient-end: rgba(190,190,190,.4);
+  background-gradient-direction: radial;
+  border: .5px solid rgba(180,180,180,.6);
+}
+%headerbarshield {
+  background-gradient-start: rgba(225,222,218,1);
+  background-gradient-end: rgba(218,214,210,.9);
+  background-gradient-direction: radial;
+  border: .5px solid rgba(249,248,248,.7);
+} //rgb(224, 221, 218)
 %flashlightLupeGlassEven {
   background-gradient-start: rgba(255,255,255,.4);
   background-gradient-end: rgba(235,235,235,.2);
